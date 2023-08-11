@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-import subprocess
+import os
 
-def my_func():
-subprocess.call(["echo", "#pythoniscool"])
+t = "UTF-8"
+
+os.write(1, "#pythoniscool\n".encode(t))
