@@ -8,9 +8,6 @@ def add(a, b):
 *int: the values
 */
 
-
-return a + b
-
 from add_0 import add
 a = 1
 b = 2
