@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-if _name_ == "_main_":
+if __name__ == "__main__":
 """ display sum, subtraction, multiple,
 and division of 10 and 5."""
 
