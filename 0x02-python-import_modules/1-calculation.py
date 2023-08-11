@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 if _name_ == "_main_":
-""" display sum, subtraction, multiple, and division of 10 and 5."""
+""" display sum, subtraction, multiple,
+and division of 10 and 5."""
 
 from calculator_1 import add, sub, mul, div
 
