@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-if__name__ == "__main__":
-
 import subprocess
 
+def my_func():
 subprocess.call(["echo", "#pythoniscool"])
