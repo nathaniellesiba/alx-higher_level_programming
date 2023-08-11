@@ -12,4 +12,4 @@ def magic_calculation(a, b):
             c = s
         return c
     else:
-        return len(a) + len(b)
+        return(sub(a, b))
