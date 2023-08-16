@@ -6,4 +6,4 @@
 Note that the code uses a lambda function within the map function to perform the multiplication operation. The map function applies this lambda function to each element in my_list, effectively multiplying each value by number. Finally, the list function is used to convert the map object into a list."""
 
 def multiply_list_map(my_list=[], number=0):
-    return list(map(lambda x: x * number, my_list))
+    return list(map(lambda x: x * number), my_list)
