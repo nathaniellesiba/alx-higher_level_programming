@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-"""division of two int a, b"""
-
 
 def safe_print_division(a, b):
     try:
@@ -10,4 +8,4 @@ def safe_print_division(a, b):
         result = None
     finally:
         print("Inside result: {}".format(result))
-        return (result)
+    return (result)
