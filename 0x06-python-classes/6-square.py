@@ -9,7 +9,7 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initializes a square with the given size and position.
+        Initializes a square
 
         Args:
             size (int, optional): The length of the square
@@ -20,7 +20,7 @@ class Square:
     @property
     def size(self):
         """
-        Get the size of the square.
+        Size of the square.
 
         Returns:
             int: The length of each side of the square.
@@ -71,7 +71,7 @@ class Square:
 
     def my_print(self):
         """
-        Print a square pattern of '#' characters with the specified position.
+        Print a square pattern of '#' characters
         """
         if self.__size == 0:
             print()
