@@ -1,0 +1,29 @@
+the ''add_integer'' module
+using ''add_integer''
+import function from module:
+>>>add_integer = __import__('0-add_integer').add_integer
+
+Test one int arg:
+>>>add_integer(2)
+100
+
+Test one int argument default:
+>>>add_integer(0)
+98
+
+Test one float:
+>>>add_integer(123.9)
+221
+
+Test one negative float:
+>>>add_integer(-95.5)
+3
+
+Test two int:
+>>>add_integer(10, 5)
+15
+
+Test two big int:
+>>>add_integer(999999998, 999999999)
+1999999997
+

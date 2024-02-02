@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 0-add_integer.py
 
 def add_integer(a, b=98):
     if not isinstance(a, (int, float)):
@@ -9,3 +8,6 @@ def add_integer(a, b=98):
 
     return int(a) + int(b)
 
+if __name__ == "__main__":
+    import doctest
+    doctest.testfile("tests/2-matrix_divided.txt")
