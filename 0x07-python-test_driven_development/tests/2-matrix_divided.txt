@@ -1,29 +1,61 @@
-the ''add_integer'' module
-using ''add_integer''
-import function from module:
->>>add_integer = __import__('0-add_integer').add_integer
+Using ``add_integer``
+-----------------------
 
-Test one int arg:
->>>add_integer(2)
-100
+Variable "b" is defaulted to int "98"
+Ensure Variable type is int
+Returns the sum of the Variable
 
-Test one int argument default:
->>>add_integer(0)
-98
+First import ``add_integer``
 
-Test one float:
->>>add_integer(123.9)
-221
+    >>> add_integer = __import__('0-add_integer').add_integer
 
-Test one negative float:
->>>add_integer(-95.5)
-3
+Now use it:
 
-Test two int:
->>>add_integer(10, 5)
-15
+Positive usage:
+    >>> add_integer(1, 2)
+    3
 
-Test two big int:
->>>add_integer(999999998, 999999999)
-1999999997
+Negative input:
+    >>> add_integer(100, -2)
+    98
+
+Positive input:
+    >>> add_integer(2)
+    100
+
+Float and negative input:
+    >>> add_integer(100.3, -2)
+    98
+
+Float overflow:
+    >>> add_integer(1500.5)
+    1598
+
+Float NaN:
+    >>> add_integer(float('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+String input:
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+None input:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+Double negative float input:
+    >>> add_integer(-100.5, -10.8)
+    -110
+
+Double string input:
+    >>> add_integer("holberton", "school")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
 
