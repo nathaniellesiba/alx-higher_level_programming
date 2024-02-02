@@ -1,51 +1,42 @@
-Using ``add_integer``
------------------------
-
-Variable "b" is defaulted to int "98"
-Ensure Variable type is int
-Returns the sum of the Variable
-
-First import ``add_integer``
-
-    >>> add_integer = __import__('0-add_integer').add_integer
-
-Now use it:
-
-
-    Adds 2 integers.
+ """
+    Divides all elements of a matrix by a given number.
 
     Args:
-        a (int or float): The first number to be added.
-        b (int or float): The second number to be added. Defaults to 98.
+        matrix (list of lists): The matrix to be divided.
+        div (int or float): The number to divide the matrix elements by.
 
     Returns:
-        int: The sum of a and b, cast to an integer.
+        list of lists: The new matrix with elements divided by 'div', rounded to 2 decimal places.
 
     Raises:
-        TypeError: If a or b are not integers or floats.
+        TypeError: If matrix is not a list of lists of integers or floats, or if div is not a number (integer or float).
+        TypeError: If each row of the matrix does not have the same size.
+        ZeroDivisionError: If div is equal to 0.
 
     Examples:
-        >>> add_integer(1, 2)
-        3
-        >>> add_integer(100, -2)
-        98
-        >>> add_integer(2)
-        100
-        >>> add_integer(100.3, -2)
-        98
-        >>> add_integer(1500.5)
-        1598
-        >>> add_integer(float('NaN'))
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, 2)
+        [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+        >>> matrix = [[1.5, 2.5, 3.5], [4.5, 5.5, 6.5]]
+        >>> matrix_divided(matrix, 2)
+        [[0.75, 1.25, 1.75], [2.25, 2.75, 3.25]]
+
+        >>> matrix = [[1, 2, 3], [4, 5]]
+        >>> matrix_divided(matrix, 2)
         Traceback (most recent call last):
             ...
-        ValueError: cannot convert float NaN to integer
-        >>> add_integer(4, "School")
+        TypeError: Each row of the matrix must have the same size
+
+        >>> matrix = [[1, 2, 3], [4, "five", 6]]
+        >>> matrix_divided(matrix, 2)
         Traceback (most recent call last):
             ...
-        TypeError: b must be an integer
-        >>> add_integer(None)
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, 0)
         Traceback (most recent call last):
             ...
-        TypeError: a must be an integer
-        >>> add_integer(-100.5, -10.8)
-        -110
+        ZeroDivisionError: division by zero
+    """
