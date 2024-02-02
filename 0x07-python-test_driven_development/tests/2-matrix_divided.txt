@@ -11,51 +11,41 @@ First import ``add_integer``
 
 Now use it:
 
-Positive usage:
-    >>> add_integer(1, 2)
-    3
 
-Negative input:
-    >>> add_integer(100, -2)
-    98
+    Adds 2 integers.
 
-Positive input:
-    >>> add_integer(2)
-    100
+    Args:
+        a (int or float): The first number to be added.
+        b (int or float): The second number to be added. Defaults to 98.
 
-Float and negative input:
-    >>> add_integer(100.3, -2)
-    98
+    Returns:
+        int: The sum of a and b, cast to an integer.
 
-Float overflow:
-    >>> add_integer(1500.5)
-    1598
+    Raises:
+        TypeError: If a or b are not integers or floats.
 
-Float NaN:
-    >>> add_integer(float('NaN'))
-    Traceback (most recent call last):
-    ...
-    ValueError: cannot convert float NaN to integer
-
-String input:
-    >>> add_integer(4, "School")
-    Traceback (most recent call last):
-    ...
-    TypeError: b must be an integer
-
-None input:
-    >>> add_integer(None)
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
-Double negative float input:
-    >>> add_integer(-100.5, -10.8)
-    -110
-
-Double string input:
-    >>> add_integer("holberton", "school")
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
-
+    Examples:
+        >>> add_integer(1, 2)
+        3
+        >>> add_integer(100, -2)
+        98
+        >>> add_integer(2)
+        100
+        >>> add_integer(100.3, -2)
+        98
+        >>> add_integer(1500.5)
+        1598
+        >>> add_integer(float('NaN'))
+        Traceback (most recent call last):
+            ...
+        ValueError: cannot convert float NaN to integer
+        >>> add_integer(4, "School")
+        Traceback (most recent call last):
+            ...
+        TypeError: b must be an integer
+        >>> add_integer(None)
+        Traceback (most recent call last):
+            ...
+        TypeError: a must be an integer
+        >>> add_integer(-100.5, -10.8)
+        -110
