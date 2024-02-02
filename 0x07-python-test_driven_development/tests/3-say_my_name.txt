@@ -1,0 +1,27 @@
+"""
+Prints the given first name and last name.
+
+Args:
+first_name (str): The first name.
+last_name (str): The last name. Defaults to an empty string.
+
+Raises:
+TypeError: If first_name or last_name are not strings.
+
+Examples:
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+>>> say_my_name("Jane")
+My name is Jane
+
+>>> say_my_name(123, "Doe")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 456)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+"""
