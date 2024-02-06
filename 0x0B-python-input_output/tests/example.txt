@@ -4,3 +4,7 @@ read_file("example.txt")
 #example of write file usage
 num_chars = write_file("example.txt", "This is a sample text.")
 print(num_chars)
+
+#example of append file usage which is basically adding
+num_chars = append_write("example.txt", "This is additional text.")
+print(num_chars)
