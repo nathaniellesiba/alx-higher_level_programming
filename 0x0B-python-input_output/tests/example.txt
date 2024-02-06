@@ -1,2 +1,6 @@
-# Example usage
+# Example of read file usage
 read_file("example.txt")
+
+#example of write file usage
+num_chars = write_file("example.txt", "This is a sample text.")
+print(num_chars)
