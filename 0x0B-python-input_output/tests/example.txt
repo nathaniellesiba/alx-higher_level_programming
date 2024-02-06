@@ -8,3 +8,6 @@ print(num_chars)
 #example of append file usage which is basically adding
 num_chars = append_write("example.txt", "This is additional text.")
 print(num_chars)
+
+# Example usage
+save_to_json_file(data, "output.json")
