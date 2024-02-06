@@ -14,3 +14,7 @@ save_to_json_file(data, "output.json")
 
 # Example usage for more append to insert line
 append_after(filename="example.txt", search_string="specific_string", new_string="Line to append")
+
+# Example usage on pascal triangle
+result = pascal_triangle(5)
+print(result)
