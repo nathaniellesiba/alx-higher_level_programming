@@ -1,0 +1,2 @@
+# Example usage
+read_file("example.txt")
