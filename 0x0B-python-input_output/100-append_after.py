@@ -6,6 +6,7 @@ def append_after(filename="", search_string="", new_string=""):
     with open(filename, 'r+') as file:
         lines = file.readlines()
         file.seek(0)
+        '''to start writing from the beginning'''
         for line in lines:
             file.write(line)
             if search_string in line:
