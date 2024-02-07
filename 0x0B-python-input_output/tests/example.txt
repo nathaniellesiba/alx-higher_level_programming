@@ -36,3 +36,9 @@ student1 = Student("John", "Doe", 20)
 print(student1.to_json())  # Retrieves all attributes
 print(student1.to_json(['first_name', 'age']))  # Retrieves specified attributes
 
+
+student1 = Student("John", "Doe", 20)
+print(student1.to_json())  # Retrieves all attributes
+student1.reload_from_json({'first_name': 'Alice', 'age': 22})  # Replaces attributes
+print(student1.to_json())  # Retrieves updated attributes
+
