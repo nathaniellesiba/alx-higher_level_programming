@@ -62,3 +62,17 @@ print(is_same_class(obj1, MyClass))  # This will return True
 print(is_same_class(obj2, int))  # This will return True
 print(is_same_class(obj2, str))  # This will return False
 
+
+
+class ParentClass:
+    pass
+
+class ChildClass(ParentClass):
+    pass
+
+obj1 = ChildClass()
+obj2 = "Hello"
+print(is_kind_of_class(obj1, ParentClass))  # This will return True
+print(is_kind_of_class(obj1, object))  # This will return True
+print(is_kind_of_class(obj2, int))  # This will return False
+
