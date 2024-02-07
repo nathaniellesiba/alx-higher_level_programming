@@ -31,3 +31,8 @@ print(loaded_data)
 student1 = Student("John", "Doe", 20)
 print(student1.to_json())
 
+
+student1 = Student("John", "Doe", 20)
+print(student1.to_json())  # Retrieves all attributes
+print(student1.to_json(['first_name', 'age']))  # Retrieves specified attributes
+
