@@ -76,3 +76,6 @@ print(is_kind_of_class(obj1, ParentClass))  # This will return True
 print(is_kind_of_class(obj1, object))  # This will return True
 print(is_kind_of_class(obj2, int))  # This will return False
 
+
+add_attribute(obj, 'attr1', 10)  # This will add the attribute 'attr1' to the object with the value 10
+add_attribute(obj, 'attr2', 20)  # This will raise a TypeError with the message "can't add new attribute"
