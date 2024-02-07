@@ -23,3 +23,8 @@ print(result)
 my_dictionary = {"name": "John", "age": 30, "city": "New York"}
 save_to_json_file(my_dictionary, "output.json")
 
+
+#load the object from the file "input.json" and store it in the variable
+loaded_data = load_from_json_file("input.json")
+print(loaded_data)
+
