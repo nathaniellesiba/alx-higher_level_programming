@@ -52,3 +52,13 @@ Test append:
 my_list = MyList([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
 my_list.print_sorted()  # This will print the sorted list in ascending order
 
+
+class MyClass:
+    pass
+
+obj1 = MyClass()
+obj2 = 123
+print(is_same_class(obj1, MyClass))  # This will return True
+print(is_same_class(obj2, int))  # This will return True
+print(is_same_class(obj2, str))  # This will return False
+
