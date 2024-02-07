@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''Module to lookup for the method'''
 
+
 def inherits_from(obj, a_class):
-   """
+    """
     Returns True if the object is an instance of a class that inherited (directly or indirectly) from the specified class; otherwise False.
 
     Args:
@@ -11,8 +12,13 @@ def inherits_from(obj, a_class):
 
     Returns:
     True if obj is an instance of a class that inherited (directly or indirectly) from a_class; otherwise False.
-"""
+    """
     return issubclass(type(obj), a_class) and type(obj) != a_class
+
+
+    """
+    check if an object is an instance of a class that inherited (directly or indirectly) from the specified class
+    """
 
 class ParentClass:
     pass
@@ -25,3 +31,4 @@ obj2 = "Hello"
 print(inherits_from(obj1, ParentClass))  # This will return True
 print(inherits_from(obj1, object))  # This will return True
 print(inherits_from(obj2, int))  # This will return False
+
