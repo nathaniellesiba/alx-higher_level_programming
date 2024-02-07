@@ -28,3 +28,6 @@ save_to_json_file(my_dictionary, "output.json")
 loaded_data = load_from_json_file("input.json")
 print(loaded_data)
 
+student1 = Student("John", "Doe", 20)
+print(student1.to_json())
+
