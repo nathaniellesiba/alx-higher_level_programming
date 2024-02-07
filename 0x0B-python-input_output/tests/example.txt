@@ -18,3 +18,8 @@ append_after(filename="example.txt", search_string="specific_string", new_string
 # Example usage on pascal triangle
 result = pascal_triangle(5)
 print(result)
+
+
+my_dictionary = {"name": "John", "age": 30, "city": "New York"}
+save_to_json_file(my_dictionary, "output.json")
+
