@@ -3,15 +3,11 @@
 from models.base import Base  # Import the Base class
 
 class Rectangle(Base):
-    """ this is the class method for rectangle
-    """
+    """this is the rectangle class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """the function that initialize
-        the width, height, x and y dimensions
-        """
+        """the initialize of width, height, x and y dimensions"""
         super().__init__(id)
-        """ Call the super class with id
-        """
         self.width = width
         self.height = height
         self.x = x
@@ -19,6 +15,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -32,6 +29,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -45,6 +43,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """x position of the rectangle"""
         return self.__x
 
     @x.setter
@@ -58,6 +57,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """y position of the triangle"""
         return self.__y
 
     @y.setter
