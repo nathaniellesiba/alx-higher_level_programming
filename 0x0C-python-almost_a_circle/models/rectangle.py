@@ -3,8 +3,15 @@
 from models.base import Base  # Import the Base class
 
 class Rectangle(Base):
+    """ this is the class method for rectangle
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(id)  # Call the super class with id
+        """the function that initialize
+        the width, height, x and y dimensions
+        """
+        super().__init__(id)
+        """ Call the super class with id
+        """
         self.width = width
         self.height = height
         self.x = x
