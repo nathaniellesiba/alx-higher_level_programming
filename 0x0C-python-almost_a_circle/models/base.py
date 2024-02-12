@@ -25,3 +25,32 @@ class Base:
         else:
             Base.__nb_objects += 1  # increment __nb_objects
             self.id = Base.__nb_objects  # assign the new value to the public instance attribute id
+
+@staticmethod
+"""method that is being added
+"""
+def to_json_string(list_dictionaries):
+    """a function that returns a json list of dictionaries
+    and the argument list_dictionaries is the list
+    """
+    If list_dictionaries is None or list_dictionaries == []:
+        return "[]"
+    """return empty for none
+    """
+    return json.dumps(list_dictionaries)
+
+@classmethod
+"""method that is being added
+"""
+def save_to_file(cls, list_objs):
+    """writing a JSON serial list for objects
+    writing them to a file with arguments named list_obj(list)
+    """
+    filename = cls.__name__ + ".json"
+    """this is the name of the file starting with cls for class"""
+    with open(filename, "w") as jsonfile:
+        if list_objs is None:
+            jsonfile.write("[]")
+        else:
+            list_dicts = [o.to_disctionary() for o in list_objs]
+            jsonfile.write(Base.to_json_string(list_dicts))
