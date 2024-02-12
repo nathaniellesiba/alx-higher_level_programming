@@ -27,16 +27,14 @@ class Base:
             self.id = Base.__nb_objects  # assign the new value to the public instance attribute id
 
 @staticmethod
-"""method that is being added
-"""
 def to_json_string(list_dictionaries):
     """a function that returns a json list of dictionaries
-    and the argument list_dictionaries is the list
+
+    args:
+        the argument list_dictionaries is the list
     """
     If list_dictionaries is None or list_dictionaries == []:
         return "[]"
-    """return empty for none
-    """
     return json.dumps(list_dictionaries)
 
 @classmethod
