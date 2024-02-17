@@ -3,7 +3,7 @@
 from models.base import Base
 
 class Rectangle(Base):
-    def __init__(self, id, width, height, x, y):
+    def __init__(self, id=None, width, height, x=0, y=0):
         super().__init__(id)
         self.__width = width
         self.__height = height

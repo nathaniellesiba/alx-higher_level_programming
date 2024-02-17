@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 
 """Import libraries for base model"""
-#import json
-#import csv
-#import turtle
+from json import dumps, loads
+import csv
 
 
 class Base:
@@ -12,7 +11,7 @@ class Base:
     it represent all classes in the project
     and doing so with provate class attribute
     """
-    __nb_objects = 0  # private class attribute
+    __nb_objects = 0
 
     def __init__(self, id=None):
         """ this is initializing a new base
@@ -23,8 +22,8 @@ class Base:
             assign the public instance attribute id with the argument value
             """
         else:
-            Base.__nb_objects += 1  # increment __nb_objects
-            self.id = Base.__nb_objects  # assign the new value to the public instance attribute id
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
 @staticmethod
 def to_json_string(list_dictionaries):
