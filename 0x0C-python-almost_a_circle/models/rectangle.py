@@ -42,3 +42,11 @@ class Rectangle(Base):
     def y(self, value):
         self.__y = value
 
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
