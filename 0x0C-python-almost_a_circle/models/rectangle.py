@@ -62,3 +62,40 @@ class Rectangle(Base):
 def area(self):
     """area of rectangle computed"""
     return self.with * self.height
+
+def display(self):
+        '''Prints string representing this rectangle.'''
+        s = '\n' * self.y + \
+            ('\n'.join([' ' * self.x + '#' * self.width for _ in range(self.height)]) + '\n')
+        print(s, end='')
+
+
+
+def __str__(self):
+    """return string info about rectangle"""
+     return '[{}] ({}) {}/{} - {}/{}'.format(type(self).__name__, id(self), self.x, self.y, self.width, self.height)
+
+def __update(self, id=None, width=None, height=None, x=None, y=None):
+        '''Internal method that updates instance attributes via */**args.'''
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+def update(self, *args, **kwargs):
+        '''Updates instance attributes via no-keyword & keyword args.'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
+def to_dictionary(self):
+        '''Returns dictionary representation of this class.'''
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
