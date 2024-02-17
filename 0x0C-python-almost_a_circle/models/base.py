@@ -65,4 +65,43 @@ def from_json_string(json_string):
         return {}
     return json.loads(json_string)
 
+@classmethod
+def create(cls, **dictionary):
+    """class pf disctionaries
+    Args:
+    ***dictionary (dict which pairs attribs to init
+    """
+    if dictionary and dictionary != {}:
+        if cls.__name__ == "rectangle":
+            new = cls (1, 1)
+        else:
+            new = cls(1)
+            new.update(**dictionary)
+        return new
 
+def load_from_file(cls):
+    """return list of instant classes from json strings
+    reading from <cls.__name__>.json
+    Returns:
+    empty or initiated class
+    """
+    filename = str(cls.__name__) + ".json"
+    try:
+        with open(filename, "r") as jsonfile:
+            list_dicts = Base.from_json_string(jsonfile.read())
+            return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
+
+def save_to_file(cls. list_objs):
+    """writes json serial list of objects to file
+    Arg:
+    list_obj(list) which inherit from Base instance
+    """
+    filename = cls.__name__ + ".json"
+    with open(filename, "w") as json file:
+        if list_obj is None:
+            jsonfile.write("[]")
+        else:
+            list_dicts = [o. to_dictionary() for o in list_objs]
+            jsonfile.write(Base.to_json_string(list_dicts))
