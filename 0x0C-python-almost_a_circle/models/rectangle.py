@@ -3,7 +3,7 @@
 from models.base import Base
 
 class Rectangle(Base):
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, id, width, height, x, y):
         super().__init__(id)
         self.__width = width
         self.__height = height
@@ -12,7 +12,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """width of the rectangle"""
+        """Width of the rectangle"""
         return self.__width
 
     @width.setter
@@ -22,7 +22,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """height of the rectangle"""
+        """Height of the rectangle"""
         return self.__height
 
     @height.setter
@@ -32,7 +32,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x of the rectangle"""
+        """X-coordinate of the rectangle"""
         return self.__x
 
     @x.setter
@@ -42,7 +42,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y of the triangle"""
+        """Y-coordinate of the rectangle"""
         return self.__y
 
     @y.setter
@@ -50,13 +50,12 @@ class Rectangle(Base):
         self.validate_integer("y", value)
         self.__y = value
 
-def validate_integer(self, name, value, eq=True):
-    """method for validation
-    """
-    if type(value) !=int:
-        raise TypeError("{} must be an integer".format(name))
-    if eq and value < 0:
-        raise ValueError("{} must be >= 0".format(name))
-    elif not eq and Value <= 0:
-        raise ValueError("{} must be > 0".format(name))
+    def validate_integer(self, name, value, eq=True):
+        """Method for validation"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        elif not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
 
