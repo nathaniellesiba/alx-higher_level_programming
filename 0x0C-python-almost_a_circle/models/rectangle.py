@@ -12,93 +12,51 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        self.validate_integer("width", value, False)
         self.__width = value
 
     @property
     def height(self):
+        """height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        self.validate_integer("height", value, False)
         self.__height = value
 
     @property
     def x(self):
+        """x of the rectangle"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        self.validate_integer("x", value)
         self.__x = value
 
     @property
     def y(self):
+        """y of the triangle"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        self.validate_integer("y", value)
         self.__y = value
 
-
-
-class Rectangle:
-    def __init__(self, width, height, x, y):
-        self._width = width
-        self._height = height
-        self._x = x
-        self._y = y
-
-    @property
-    def width(self):
-        return self._width
-
-    @width.setter
-    def width(self, value):
-        if not isinstance(value, int):
-            raise TypeError("width must be an integer")
-        elif value <= 0:
-            raise ValueError("width must be > 0")
-        else:
-            self._width = value
-
-    @property
-    def height(self):
-        return self._height
-
-    @height.setter
-    def height(self, value):
-        if not isinstance(value, int):
-            raise TypeError("height must be an integer")
-        elif value <= 0:
-            raise ValueError("height must be > 0")
-        else:
-            self._height = value
-
-    @property
-    def x(self):
-        return self._x
-
-    @x.setter
-    def x(self, value):
-        if value < 0:
-            raise ValueError("x must be >= 0")
-        else:
-            self._x = value
-
-    @property
-    def y(self):
-        return self._y
-
-    @y.setter
-    def y(self, value):
-        if value < 0:
-            raise ValueError("y must be >= 0")
-        else:
-            self._y = value
-
-    def area(self):
-        return self._width * self._height
+def validate_integer(self, name, value, eq=True):
+    """method for validation
+    """
+    if type(value) !=int:
+        raise TypeError("{} must be an integer".format(name))
+    if eq and value < 0:
+        raise ValueError("{} must be >= 0".format(name))
+    elif not eq and Value <= 0:
+        raise ValueError("{} must be > 0".format(name))
 
