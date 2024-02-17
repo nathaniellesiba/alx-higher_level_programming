@@ -52,3 +52,17 @@ def save_to_file(cls, list_objs):
         else:
             list_dicts = [o.to_disctionary() for o in list_objs]
             jsonfile.write(Base.to_json_string(list_dicts))
+
+@staticmethod
+def from_json_string(json_string):
+    """return json string
+    Args:
+    json_string (str): a JSON str rep
+    Return:
+    json string as none
+    """
+    if json_string is None or json_string == "[]":
+        return {}
+    return json.loads(json_string)
+
+
