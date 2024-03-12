@@ -1,2 +1,2 @@
 --Import in hbtn_0c_0 database this table dump by state
-SELECT state, MAX(temperature) AS max_temperature FROM weather_data GROUP BY state ORDER BY state;
+SELECT state, MAX(value) AS max_temp FROM temperatures GROUP BY state ORDER BY max_temp DESC;
