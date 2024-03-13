@@ -1,4 +1,4 @@
 -- Prints full desc table first_table from db hbtn_0c_0
-USE hbtn_0c_0;
-
-DESCRIBE first_table;
+SELECT COLUMN_NAME, DATA_TYPE, IS_NULLABLE, COLUMN_KEY, COLUMN_DEFAULT, EXTRA 
+FROM information_schema.COLUMNS 
+WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
