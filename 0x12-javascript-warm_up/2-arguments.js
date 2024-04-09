@@ -1,2 +1,5 @@
 #!/usr/bin/node
-node process-args.js No argument Argument found Arguments found
+const { argv } = require('process');
+argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
