@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""lists all cities from the database hbtn_0e_4_usa"""
+"""lists all cities from the
+database hbtn_0e_4_usa"""
 
 import sys
 import MySQLdb
@@ -7,12 +8,14 @@ import MySQLdb
 def list_cities(username, password, database):
     try:
         # Connect to the MySQL server
-        db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+        db = MySQLdb.connect(host="localhost",
+                port=3306, user=username,
+                passwd=password, db=database)
 
-        # Create a cursor object using cursor() method
+        # Create cursor object using cursor() method
         cursor = db.cursor()
 
-        # Prepare the SQL query to list all cities sorted by id in ascending order
+        # list all cities sorted in asc order
         query = "SELECT * FROM cities ORDER BY id ASC"
 
         # Execute the SQL query
