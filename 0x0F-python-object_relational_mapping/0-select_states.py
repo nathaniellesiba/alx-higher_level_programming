@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""list of states in ascending order"""
 import MySQLdb
 import sys
 
