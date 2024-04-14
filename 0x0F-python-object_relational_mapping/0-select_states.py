@@ -3,12 +3,12 @@
 import MySQLdb
 import sys
 
-def list_states(username, password, database):
-    """connecting to the database"""
-    db=_mysql.connect(host='localhost',port=3306, user=username, passwd=password, db=hbtn_0e_0_usa)
+"""execution order"""
+if__name__=='__main'__:
+     db= MySQLdb.connect(host='localhost',port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c=db.cursor()
 
-    """executing the SQL query"""
+     """executing the SQL query"""
     c.execute("SELECT * FROM states ORDER BY id ASC")
 
     """fetching all rows"""
@@ -20,11 +20,3 @@ def list_states(username, password, database):
 
     """close db connection"""
     db.close()
-
-"""execution order"""
-if__name__=='__main'__:
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    list_states(username, password, database)
