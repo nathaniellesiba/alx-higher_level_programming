@@ -12,12 +12,22 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, db_name))
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+            format(username, password, db_name),pool_pre_ping=True)
+    
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
+    
+    """creating a session"""
     session = Session()
 
-    cities = session.query(City).join(State).order_by(City.id).all()
+    """extracting all cities in a state"""
+    cities = session.query(State, City) \
+            .order_by(City.id).all()
 
+    """print all states"""
     for city in cities:
         print("{}: ({}) {}".format(city.state.name, city.id, city.name))
+
+
+    session.close()
