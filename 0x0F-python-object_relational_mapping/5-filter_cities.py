@@ -6,33 +6,27 @@ that state, using the database hbtn_0e_4_usa"""
 import sys
 import MySQLdb
 
-if __name__ == "__main__":
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        state_name = sys.argv[4]
 
-        db = MySQLdb.connect(host="localhost",
-                user=username, passwd=password,
-                db=database, port=3306)
-        
-        cursor = db.cursor()
-        
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         host='localhost',
+                         port=3306)
 
-        sql = """SELECT cities.name
+    cursor = db.cursor()
+
+    sql = """SELECT cities.name
           FROM states
           INNER JOIN cities ON states.id = cities.state_id
           WHERE states.name = %s
           ORDER BY cities.id ASC"""
 
+    cursor.execute(sql, (sys.argv[4],))
 
-        cursor.execute
-        (sql, (state_name,))
+    data = cursor.fetchall()
 
-        data = cursor.fetchall()
-        
-        for city in data:
-            print(city)
-        
-        cursor.close()
-        db.close()
+    print(", ".join([city[0] for city in data]))
+
+    cursor.close()
+    db.close()
