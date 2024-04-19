@@ -5,20 +5,28 @@ database hbtn_0e_4_usa"""
 import sys
 import MySQLdb
 
-"""a class method for listing all cities"""
-def list_cities(username, password, database):
-        db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database, port=3306)
-        cursor = db.cursor()
-        cursor.execute("SELECT * FROM cities ORDER BY id")
-        data = cursor.fetchall()
-        for row in data:
-            print(row)
-        cursor.close()
-        db.close()
 
-"""the executor"""
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    list_cities(username, password, database)
+"""executing step"""
+if __name__ == '__main__':
+    db = MySQLdb.connect(user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3],
+                         host='localhost',
+                         port=3306)
+
+    cursor = db.cursor()
+
+    sql = """SELECT c.id, c.name, s.name
+          FROM states s, cities c
+          WHERE c.state_id = s.id
+          ORDER BY c.id ASC"""
+
+    cursor.execute(sql)
+
+    data = cursor.fetchall()
+
+    for row in data:
+        print(row)
+
+    cursor.close()
+    db.close()
