@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""fetches https://alx-intranet.hbtn.io/status"""
+"""fetches https://alx-intranet.hbtn.io/status
+and below is alternative code
+
 import requests
 
 if__name__=="__main__":
@@ -8,3 +10,12 @@ if__name__=="__main__":
     print("Body response:")
     print("\t- type: {}".format(a))
     print("\t- content: {}".format(html.text))
+"""
+import requests
+
+url = 'https://alx-intranet.hbtn.io/status'
+response = requests.get(url)
+data = response.json()
+
+print("- type: {}".format(type(data)))
+print("- content: {}".format(data))
