@@ -1,0 +1,3 @@
+#!/bin/bash
+result = find_peak([1, 3, 20, 4, 1, 0])
+print(result)  # This will print the peak value found in the list
